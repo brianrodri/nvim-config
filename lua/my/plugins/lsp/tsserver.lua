@@ -6,9 +6,8 @@ return {
         "jose-elias-alvarez/typescript.nvim",
         init = function()
             require("lazyvim.util").on_attach(function(_, bufnr)
-                -- stylua: ignore
-                vim.keymap.set("n", "<leader><C-Y>", "TypescriptOrganizeImports", { buffer = bufnr, desc = "Organize Imports" })
-                vim.keymap.set("n", "<leader><C-R>", "TypescriptRenameFile", { buffer = bufnr, desc = "Rename Module" })
+                vim.keymap.set("n", "<leader><C-Y>", "OrganizeImports", { buffer = bufnr, desc = "Organize Imports" })
+                vim.keymap.set("n", "<leader><C-R>", "RenameFile", { buffer = bufnr, desc = "Rename Module" })
             end)
         end,
         dependencies = {
