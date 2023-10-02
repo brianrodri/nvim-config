@@ -11,6 +11,6 @@ vim.g.mapleader = " "
 require("lazy").setup({
     spec = {
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-        { import = "my.plugins" },
+        { import = "plugins" },
     },
 })
