@@ -11,7 +11,15 @@ vim.g.mapleader = " "
 require("lazy").setup({
     spec = {
         -- Brings in a lot of cool plugins, but I don't want all of them...
-        { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+        {
+            "LazyVim/LazyVim",
+            import = "lazyvim.plugins",
+            opts = {
+                defaults = {
+                    keymaps = false,
+                },
+            },
+        },
 
         -- Keeps crashing when I switch tmux windows.
         { "folke/persistence.nvim", enabled = false },
@@ -54,7 +62,7 @@ require("lazy").setup({
         -- I hate auto-pairs, I prefer typing things on my own.
         { "echasnovski/mini.pairs", enabled = false },
 
-	-- My stuff needs to be imported last.
+        -- My stuff needs to be imported last.
         { import = "plugins" },
     },
 })
