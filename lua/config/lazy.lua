@@ -21,12 +21,20 @@ require("lazy").setup({
             },
         },
 
+        -- I like this, but I hate the "notification" pop-ups.
+        {
+            "folke/noice.nvim",
+            opts = {
+                notify = {
+                    enabled = false,
+                },
+            },
+        },
+
         -- Keeps crashing when I switch tmux windows.
         { "folke/persistence.nvim", enabled = false },
         -- I don't want a dashboard.
         { "goolord/alpha-nvim", enabled = false },
-        -- Highly experimental -- not interested in breakages.
-        { "folke/noice.nvim", enabled = false },
         -- Indent guide that "grows" to the scope. Way too slow.
         { "echasnovski/mini.indentscope", enabled = false },
         -- Shows notifications as "pop-ups". I don't like them.
