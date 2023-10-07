@@ -25,9 +25,9 @@ return {
     },
     {
         "nvim-neotest/neotest",
-        dependencies = { "nvim-neotest/neotest-jest", "nvim-tree/nvim-web-devicons" },
+        dependencies = { "marilari88/neotest-vitest", "nvim-tree/nvim-web-devicons" },
         opts = function(_, opts)
-            vim.list_extend(opts.adapters, { "neotest-jest" })
+            vim.list_extend(opts.adapters, { "neotest-vitest" })
         end,
     },
 }
