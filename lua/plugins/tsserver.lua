@@ -6,8 +6,13 @@ return {
         "jose-elias-alvarez/typescript.nvim",
         init = function()
             require("lazyvim.util").on_attach(function(_, bufnr)
-                vim.keymap.set("n", "<leader><C-Y>", "OrganizeImports", { buffer = bufnr, desc = "Organize Imports" })
-                vim.keymap.set("n", "<leader><C-R>", "RenameFile", { buffer = bufnr, desc = "Rename Module" })
+                vim.keymap.set(
+                    "n",
+                    "<leader><C-Y>",
+                    "<cmd>OrganizeImports<cr>",
+                    { buffer = bufnr, desc = "Organize Imports" }
+                )
+                vim.keymap.set("n", "<leader><C-R>", "<cmd>RenameFile<cr>", { buffer = bufnr, desc = "Rename Module" })
             end)
         end,
         dependencies = {
