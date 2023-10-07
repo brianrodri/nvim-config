@@ -59,8 +59,6 @@ require("lazy").setup({
                 search_method = "cover_or_next",
             },
         },
-        -- I hate auto-pairs, I prefer typing things on my own.
-        { "echasnovski/mini.pairs", enabled = false },
 
         -- My stuff needs to be imported last.
         { import = "plugins" },
