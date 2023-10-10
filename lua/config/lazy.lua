@@ -12,6 +12,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+vim.g.python3_host_prog = "/Users/brianrodri/Repositories/nvim-config/.direnv/python-3.9/bin/python"
+
 require("lazy").setup({
     spec = {
         -- Brings in a lot of cool plugins, but I don't want all of them...
