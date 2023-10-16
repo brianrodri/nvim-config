@@ -1,10 +1,6 @@
-local work_jdtls = { import = "work.jdtls" }
-local status, _ = pcall(require, "work.jdtls")
-if not status then
-    work_jdtls = nil
-end
+local work_jdtls_exists, _ = pcall(require, "work.jdtls")
 
 return {
     { import = "lazyvim.plugins.extras.lang.java" },
-    work_jdtls,
+    work_jdtls_exists and { import = "work.jdtls" } or nil,
 }
