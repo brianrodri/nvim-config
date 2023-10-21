@@ -1,8 +1,9 @@
 local coverage = require("coverage")
 local lazy_util = require("lazy.util")
 local lazyvim_util = require("lazyvim.util")
+local which_key = require("which-key")
 
-require("which-key").register({
+which_key.register({
     ZA = { ":qa!<CR>", "Force quit" },
 
     ["]b"] = { "<cmd>bnext<CR>", "Next buffer" },
