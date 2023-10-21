@@ -29,7 +29,7 @@ require("lazy").setup({
         { "folke/persistence.nvim", enabled = false },
         -- I don't want a dashboard.
         { "goolord/alpha-nvim", enabled = false },
-        -- Indent guide that "grows" to the scope. Way too slow.
+        -- Animated indentation guides. Neat but way too slow.
         { "echasnovski/mini.indentscope", enabled = false },
         -- I don't need to navigate TODOs.
         { "folke/todo-comments.nvim", enabled = false },
@@ -37,8 +37,8 @@ require("lazy").setup({
         { "folke/flash.nvim", enabled = false },
         -- I prefer nvim-tree, it lets me do more.
         { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-        -- This is nice, but my muscle-memory is bound to tpope/vim-surround. This mimics it.
         {
+            -- This is nice, but my muscle-memory is bound to tpope/vim-surround. This mimics it.
             "echasnovski/mini.surround",
             opts = {
                 custom_surroundings = {
