@@ -32,6 +32,8 @@ require("which-key").register({
 
         w = { ":w!<CR>", "Force write" },
 
+        T = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
+
         ["?"] = { name = "+coverage" },
         ["?cn"] = { new_coverage_jumper("next", "covered"), "Next covered" },
         ["?cp"] = { new_coverage_jumper("prev", "covered"), "Previous covered" },
