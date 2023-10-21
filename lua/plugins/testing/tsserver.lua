@@ -5,9 +5,7 @@ return {
         dependencies = {
             {
                 "nvim-neotest/neotest",
-                opts = function(_, opts)
-                    vim.list_extend(opts.adapters, { "neotest-vitest" })
-                end,
+                opts = function(_, opts) vim.list_extend(opts.adapters, { "neotest-vitest" }) end,
             },
 
             "nvim-lua/plenary.nvim",
