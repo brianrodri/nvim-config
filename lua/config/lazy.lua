@@ -14,29 +14,31 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
     spec = {
-        -- Brings in a lot of cool plugins, but I don't want all of them...
         {
+            -- Brings in a lot of cool plugins, but I don't want all of them...
             "LazyVim/LazyVim",
             import = "lazyvim.plugins",
-            opts = {
-                defaults = {
-                    keymaps = false,
-                },
-            },
+            opts = { defaults = { keymaps = false } },
         },
 
         -- Keeps crashing when I switch tmux windows.
         { "folke/persistence.nvim", enabled = false },
+
         -- I don't want a dashboard.
         { "goolord/alpha-nvim", enabled = false },
+
         -- Animated indentation guides. Neat but way too slow.
         { "echasnovski/mini.indentscope", enabled = false },
+
         -- I don't need to navigate TODOs.
         { "folke/todo-comments.nvim", enabled = false },
+
         -- Adds virtual text to search matches. Too noisy, not a fan.
         { "folke/flash.nvim", enabled = false },
+
         -- I prefer nvim-tree, it lets me do more.
         { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+
         {
             -- This is nice, but my muscle-memory is bound to tpope/vim-surround. This mimics it.
             "echasnovski/mini.surround",
