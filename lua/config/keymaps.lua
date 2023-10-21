@@ -1,8 +1,6 @@
-local function new_coverage_jumper(dir, type)
-    local jump = require("coverage").jump_next
-    if dir == "prev" then jump = require("coverage").jump_prev end
-    return function() return jump(type) end
-end
+local coverage = require("coverage")
+local lazy_util = require("lazy.util")
+local lazyvim_util = require("lazyvim.util")
 
 require("which-key").register({
     ZA = { ":qa!<CR>", "Force quit" },
@@ -15,11 +13,10 @@ require("which-key").register({
 
         gg = {
             function()
-                require("lazy.util").float_term({ "lazygit" }, {
-                    cwd = require("lazyvim.util").root.get(),
-                    esc_esc = false,
-                    ctrl_hjkl = false,
-                })
+                lazy_util.float_term(
+                    { "lazygit" },
+                    { cwd = lazyvim_util.root.get(), esc_esc = false, ctrl_hjkl = false }
+                )
             end,
             "Lazygit",
         },
@@ -31,12 +28,12 @@ require("which-key").register({
         T = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
 
         ["?"] = { name = "+coverage" },
-        ["?cn"] = { new_coverage_jumper("next", "covered"), "Next covered" },
-        ["?cp"] = { new_coverage_jumper("prev", "covered"), "Previous covered" },
-        ["?un"] = { new_coverage_jumper("next", "uncovered"), "Next uncovered" },
-        ["?up"] = { new_coverage_jumper("prev", "uncovered"), "Previous uncovered" },
-        ["?pn"] = { new_coverage_jumper("next", "partial"), "Next partially covered" },
-        ["?pp"] = { new_coverage_jumper("prev", "partial"), "Previous partially covered" },
+        ["?cn"] = { function() coverage.jump_next("covered") end, "Next covered" },
+        ["?cp"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
+        ["?un"] = { function() coverage.jump_next("uncovered") end, "Next uncovered" },
+        ["?up"] = { function() coverage.jump_prev("uncovered") end, "Previous uncovered" },
+        ["?pn"] = { function() coverage.jump_next("partial") end, "Next partially covered" },
+        ["?pp"] = { function() coverage.jump_prev("partial") end, "Previous partially covered" },
 
         ["<C-f>"] = { ":LazyFormat<CR>", "LazyFormat" },
 
