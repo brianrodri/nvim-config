@@ -1,6 +1,6 @@
 return {
-    -- Color scheme
     {
+        -- Color scheme
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
