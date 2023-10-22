@@ -13,13 +13,8 @@ which_key.register({
         e = { ":e! %<CR>", "Force re-open" },
 
         gg = {
-            function()
-                lazy_util.float_term(
-                    { "lazygit" },
-                    { cwd = lazyvim_util.root.get(), esc_esc = false, ctrl_hjkl = false }
-                )
-            end,
-            "Lazygit",
+            function() lazy_util.float_term({ "lazygit" }, { cwd = lazyvim_util.root.get() }) end,
+            "lazygit",
         },
 
         G = { name = "+fugitive" },
