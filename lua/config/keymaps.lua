@@ -22,19 +22,37 @@ which_key.register({
             "Lazygit",
         },
 
+        G = { name = "+fugitive" },
+        GG = { ":Git<CR>", "git summary" },
+
+        Gb = { ":GBrowse<CR>", "git browse", mode = { "n", "v" } },
+
+        Ge = { ":Gread", "git checkout --", mode = { "n", "v" } },
+        Gw = { ":Gwrite", "git add", mode = { "n", "v" } },
+        Gc = { ":Git commit", "git commit" },
+        Gr = { ":GRename ", "git mv" },
+        ["G<C-r>"] = { ":GMove ", "git mv" },
+
+        ["G?"] = { ":Git blame<CR>", "git blame", mode = { "n", "v" } },
+
+        ["G<C-h>"] = { ":topleft Gvdiffsplit<CR>", "git diff (split left)" },
+        ["G<C-j>"] = { ":belowright Gdiffsplit<CR>", "git diff (split down)" },
+        ["G<C-k>"] = { ":topleft Gdiffsplit<CR>", "git diff (split up)" },
+        ["G<C-l>"] = { ":belowright Gvdiffsplit<CR>", "git diff (split right)" },
+
         l = { "<cmd>Lazy<CR>", "LazyVim" },
 
-        w = { ":w!<CR>", "Force write" },
-
         T = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
+
+        w = { ":w!<CR>", "Force write" },
 
         ["?"] = { name = "+coverage" },
         ["?cn"] = { function() coverage.jump_next("covered") end, "Next covered" },
         ["?cp"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
-        ["?un"] = { function() coverage.jump_next("uncovered") end, "Next uncovered" },
-        ["?up"] = { function() coverage.jump_prev("uncovered") end, "Previous uncovered" },
         ["?pn"] = { function() coverage.jump_next("partial") end, "Next partially covered" },
         ["?pp"] = { function() coverage.jump_prev("partial") end, "Previous partially covered" },
+        ["?un"] = { function() coverage.jump_next("uncovered") end, "Next uncovered" },
+        ["?up"] = { function() coverage.jump_prev("uncovered") end, "Previous uncovered" },
 
         ["<C-f>"] = { ":LazyFormat<CR>", "LazyFormat" },
 
