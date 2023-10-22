@@ -43,7 +43,6 @@ which_key.register({
 
         m = { "<cmd>Mason<CR>", "Mason" },
 
-        ["?"] = { name = "+coverage" },
         t = { name = "+test" },
         ["t]c"] = { function() coverage.jump_next("covered") end, "Next covered" },
         ["t[c"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
