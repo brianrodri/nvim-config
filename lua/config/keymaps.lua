@@ -12,31 +12,24 @@ which_key.register({
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
 
+        g = { name = "+git" },
+        gb = { ":GBrowse<CR>", "browse" },
+        gc = { ":Git commit<CR>", "commit" },
+        ge = { ":Gread<CR>", "checkout --" },
         gg = {
             function() lazy_util.float_term({ "lazygit" }, { cwd = lazyvim_util.root.get() }) end,
             "lazygit",
         },
-
-        G = { name = "+fugitive" },
-        Gs = { ":Git<CR>", "git summary" },
-
-        Gb = { ":GBrowse<CR>", "git browse", mode = { "n", "v" } },
-
-        Gl = { ":Git pull<CR>", "git pull" },
-        Gp = { ":Git push<CR>", "git push" },
-
-        Ge = { ":Gread<CR>", "git checkout --", mode = { "n", "v" } },
-        Gw = { ":Gwrite<CR>", "git add", mode = { "n", "v" } },
-        Gc = { ":Git commit<CR>", "git commit" },
-        Gr = { ":GRename ", "git mv (filename only)" },
-        ["G<C-r>"] = { ":GMove ", "git mv" },
-
-        ["G?"] = { ":Git blame<CR>", "git blame", mode = { "n", "v" } },
-
-        ["G<C-h>"] = { ":topleft Gvdiffsplit<CR>", "git diff (split left)" },
-        ["G<C-j>"] = { ":belowright Gdiffsplit<CR>", "git diff (split down)" },
-        ["G<C-k>"] = { ":topleft Gdiffsplit<CR>", "git diff (split up)" },
-        ["G<C-l>"] = { ":belowright Gvdiffsplit<CR>", "git diff (split right)" },
+        gl = { ":Git pull<CR>", "pull" },
+        gp = { ":Git push<CR>", "push" },
+        gr = { ":GRename ", "mv (filename only)" },
+        gw = { ":Gwrite<CR>", "add" },
+        ["g?"] = { ":Git blame<CR>", "blame" },
+        ["g<C-h>"] = { ":topleft Gvdiffsplit<CR>", "diff (split left)" },
+        ["g<C-j>"] = { ":belowright Gdiffsplit<CR>", "diff (split down)" },
+        ["g<C-k>"] = { ":topleft Gdiffsplit<CR>", "diff (split up)" },
+        ["g<C-l>"] = { ":belowright Gvdiffsplit<CR>", "diff (split right)" },
+        ["g<C-r>"] = { ":GMove ", "mv" },
 
         l = { "<cmd>Lazy<CR>", "LazyVim" },
 
