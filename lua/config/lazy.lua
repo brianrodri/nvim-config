@@ -25,7 +25,7 @@ require("lazy").setup({
         { "folke/persistence.nvim", enabled = false },
 
         -- I don't want a dashboard.
-        { "goolord/alpha-nvim", enabled = false },
+        { "nvimdev/dashboard-nvim", enabled = false },
 
         -- Animated indentation guides. Neat but way too slow.
         { "echasnovski/mini.indentscope", enabled = false },
