@@ -37,6 +37,8 @@ which_key.register({
 
         w = { ":w!<CR>", "Force write" },
 
+        x = { ":bufdelete!<CR>", "Delete buffer" },
+
         ["?"] = { name = "+coverage" },
         ["?cn"] = { function() coverage.jump_next("covered") end, "Next covered" },
         ["?cp"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
