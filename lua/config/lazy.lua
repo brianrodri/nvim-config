@@ -12,6 +12,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+local work_plugins_exists, _ = pcall(require, "work.plugins")
+
 require("lazy").setup({
     spec = {
         {
@@ -70,5 +72,6 @@ require("lazy").setup({
 
         -- My stuff needs to be imported last.
         { import = "plugins" },
+        work_plugins_exists and { import = "work.plugins" } or nil,
     },
 })
