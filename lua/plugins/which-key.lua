@@ -39,6 +39,7 @@ local which_key_mappings = {
         ["g<C-k>"] = { ":topleft Gdiffsplit<CR>", "diff (split up)" },
         ["g<C-l>"] = { ":belowright Gvdiffsplit<CR>", "diff (split right)" },
 
+        l = { name = "+lazy" },
         ll = { ":Lazy<CR>", "LazyVim" },
         le = { ":LazyExtras<CR>", "LazyExtras" },
 
