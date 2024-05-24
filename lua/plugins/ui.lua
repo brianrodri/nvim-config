@@ -1,27 +1,22 @@
 return {
     {
-        -- Color scheme
-        "sainnhe/gruvbox-material",
+        "gbprod/nord.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            vim.o.termguicolors = true
-            vim.g.gruvbox_material_background = "hard"
-            vim.g.gruvbox_material_diagnostic_line_highlight = 1
-            vim.g.gruvbox_material_diagnostic_text_highlight = 1
-            vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-            vim.g.gruvbox_material_enable_bold = 1
-            vim.g.gruvbox_material_enable_italic = 1
-            vim.g.gruvbox_material_foreground = "original"
-            vim.g.gruvbox_material_statusline_style = "original"
-            vim.g.gruvbox_material_ui_contrast = "high"
+            require("nord").setup({
+                diff = { mode = "fg" },
+                search = { theme = "vscode" },
+            })
+            vim.cmd.colorscheme("nord")
         end,
+        install = {
+            colorscheme = { "nord" },
+        },
     },
 
     -- I prefer instant feedback over animations.
     { "echasnovski/mini.indentscope", enabled = false },
-
-    { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox-material" } },
 
     { import = "lazyvim.plugins.extras.ui.mini-starter", keys = false },
 
@@ -29,7 +24,17 @@ return {
     { "nvim-telescope/telescope.nvim", keys = false },
 
     -- Sleep statusline replacement
-    { "nvim-lualine/lualine.nvim", opts = { theme = "gruvbox-material" } },
+    { "nvim-lualine/lualine.nvim", opts = { theme = "nord" } },
+
+    {
+        "akinsho/bufferline.nvim",
+        config = function()
+            require("bufferline").setup({
+                options = { separator_style = "thin" },
+                highlights = require("nord.plugins.bufferline").akinsho(),
+            })
+        end,
+    },
 
     {
         -- Pretty quickfix replacement.
