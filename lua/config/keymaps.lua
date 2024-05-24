@@ -27,9 +27,9 @@ which_key.register({
 
         Gb = { ":GBrowse<CR>", "git browse", mode = { "n", "v" } },
 
-        Ge = { ":Gread", "git checkout --", mode = { "n", "v" } },
-        Gw = { ":Gwrite", "git add", mode = { "n", "v" } },
-        Gc = { ":Git commit", "git commit" },
+        Ge = { ":Gread<CR>", "git checkout --", mode = { "n", "v" } },
+        Gw = { ":Gwrite<CR>", "git add", mode = { "n", "v" } },
+        Gc = { ":Git commit<CR>", "git commit" },
         Gr = { ":GRename ", "git mv" },
         ["G<C-r>"] = { ":GMove ", "git mv" },
 
