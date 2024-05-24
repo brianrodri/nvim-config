@@ -12,12 +12,11 @@ local local_plugins_exist, _ = pcall(require, "local.plugins")
 require("lazy").setup({
     spec = {
         {
-            -- Brings in a lot of cool plugins, but I don't want all of them...
             "LazyVim/LazyVim",
             import = "lazyvim.plugins",
+            -- I'd rather add them incrementally.
             opts = { defaults = { keymaps = false } },
         },
-
         -- Animated indentation guides, but I prefer instant feedback over animations.
         { "echasnovski/mini.indentscope", enabled = false },
 
