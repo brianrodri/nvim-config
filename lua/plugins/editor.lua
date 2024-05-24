@@ -5,11 +5,8 @@ return {
     -- Lets "." repeat more kinds of things.
     "tpope/vim-repeat",
 
-    {
-        -- Frees me from setting up per-language indentation settings (just use whatever's already there)
-        "NMAC427/guess-indent.nvim",
-        config = function() require("guess-indent").setup({}) end,
-    },
+    -- Frees me from having to set up per-language indentation settings (just use whatever's already there)
+    "tpope/vim-sleuth",
 
     {
         -- Code coverage signs
