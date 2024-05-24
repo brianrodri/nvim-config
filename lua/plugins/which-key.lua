@@ -50,12 +50,16 @@ local which_key_mappings = {
         ["tt"] = { function() require("neotest").run.run() end, "Run Nearest" },
         ["tT"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, "Run File" },
         ["tg"] = { function() require("neotest").run.run(vim.uv.cwd()) end, "Run All Test Files" },
+
+        ["t]"] = { name = "+test-coverage" },
         ["t]c"] = { function() coverage.jump_next("covered") end, "Next covered" },
-        ["t[c"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
         ["t]p"] = { function() coverage.jump_next("partial") end, "Next partially covered" },
-        ["t[p"] = { function() coverage.jump_prev("partial") end, "Previous partially covered" },
         ["t]u"] = { function() coverage.jump_next("uncovered") end, "Next uncovered" },
-        ["t[u"] = { function() coverage.jump_prev("uncovered") end, "Previous uncovered" },
+
+        ["t["] = { name = "+test-coverage" },
+        ["t[c"] = { function() coverage.jump_prev("covered") end, "Prev covered" },
+        ["t[p"] = { function() coverage.jump_prev("partial") end, "Prev partially covered" },
+        ["t[u"] = { function() coverage.jump_prev("uncovered") end, "Prev uncovered" },
 
         ["<C-h>"] = { ":topleft vsplit<CR>", "Split left" },
         ["<C-j>"] = { ":belowright split<CR>", "Split down" },
