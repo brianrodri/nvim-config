@@ -1,12 +1,16 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     -- bootstrap lazy.nvim
-    -- stylua: ignore
-    vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-
-vim.g.mapleader = " "
 
 require("lazy").setup({
     spec = {
@@ -21,24 +25,12 @@ require("lazy").setup({
             },
         },
 
-        -- I like this, but I hate the "notification" pop-ups.
-        {
-            "folke/noice.nvim",
-            opts = {
-                notify = {
-                    enabled = false,
-                },
-            },
-        },
-
         -- Keeps crashing when I switch tmux windows.
         { "folke/persistence.nvim", enabled = false },
         -- I don't want a dashboard.
         { "goolord/alpha-nvim", enabled = false },
         -- Indent guide that "grows" to the scope. Way too slow.
         { "echasnovski/mini.indentscope", enabled = false },
-        -- Shows notifications as "pop-ups". I don't like them.
-        { "rcarriga/nvim-notify", enabled = false },
         -- I don't need to navigate TODOs.
         { "folke/todo-comments.nvim", enabled = false },
         -- Adds virtual text to search matches. Too noisy, not a fan.
