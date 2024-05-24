@@ -87,4 +87,27 @@ return {
             })
         end,
     },
+
+    {
+        -- This is nice, but my muscle-memory is bound to tpope/vim-surround. This mimics it.
+        "echasnovski/mini.surround",
+        opts = {
+            custom_surroundings = {
+                ["("] = { output = { left = "( ", right = " )" } },
+                ["["] = { output = { left = "[ ", right = " ]" } },
+                ["{"] = { output = { left = "{ ", right = " }" } },
+                ["<"] = { output = { left = "< ", right = " >" } },
+            },
+            mappings = {
+                add = "ys",
+                delete = "ds",
+                find = "gs",
+                find_left = "gS",
+                highlight = "gh",
+                replace = "cs",
+                update_n_lines = "",
+            },
+            search_method = "cover_or_next",
+        },
+    },
 }
