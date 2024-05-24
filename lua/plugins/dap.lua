@@ -2,9 +2,6 @@ return {
     {
         "mfussenegger/nvim-dap",
         keys = {
-            { "<leader>td", function() require'jdtls'.test_nearest_method() end, "Debug Nearest" },
-            { "<leader>tD", function() require'jdtls'.test_class() end, "Debug Class" },
-            { "<leader>t/", function() require'jdtls'.pick_test() end, "Pick Debug Test" },
 
             { "<leader>bB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
             { "<leader>bb", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
