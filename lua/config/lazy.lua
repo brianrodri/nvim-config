@@ -23,6 +23,10 @@ require("lazy").setup({
             opts = { defaults = { keymaps = false } },
         },
 
+        -- Nice, but far too unstable.
+        { "folke/noice.nvim", enabled = false },
+        { "stevearc/dressing.nvim", enabled = false },
+
         -- Keeps crashing when I switch tmux windows.
         { "folke/persistence.nvim", enabled = false },
 
