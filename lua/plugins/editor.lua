@@ -5,12 +5,6 @@ return {
     -- Frees me from having to set up per-language indentation settings (just use whatever's already there)
     "tpope/vim-sleuth",
 
-    -- A Git wrapper so awesome, it should be illegal
-    {
-        "tpope/vim-fugitive",
-        dependencies = { "tpope/vim-rhubarb" },
-    },
-
     -- Might try again if I can come up with an intuitive binding.
     { "folke/flash.nvim", enabled = false },
 

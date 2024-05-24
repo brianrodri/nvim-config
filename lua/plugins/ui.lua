@@ -24,7 +24,7 @@ return {
 
     { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox-material" } },
 
-    { "lazyvim.plugins.extras.ui.mini-starter", keys = false },
+    { import = "lazyvim.plugins.extras.ui.mini-starter", keys = false },
 
     -- Default telescope bindings are nice, but they're taking too many bindings. I'll set 'em myself.
     { "nvim-telescope/telescope.nvim", keys = false },
