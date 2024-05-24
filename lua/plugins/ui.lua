@@ -19,7 +19,7 @@ return {
     },
 
     -- Sleek statusline replacement
-    { "nvim-lualine/lualine.nvim", colorscheme = "tokyonight", event = "VeryLazy" },
+    { "nvim-lualine/lualine.nvim", opts = { colorscheme = "tokyonight" }, event = "VeryLazy" },
 
     {
         -- Pretty quickfix replacement.
