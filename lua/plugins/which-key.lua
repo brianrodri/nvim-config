@@ -1,12 +1,11 @@
 local coverage = require("coverage")
 local lazy_util = require("lazy.util")
 local lazyvim_util = require("lazyvim.util")
-local which_key = require("which-key")
 
-which_key.register({
+local which_key_mappings = {
     ZA = { ":qa!<CR>", "Force quit" },
 
-    ["<C-O><Tab>"] = { function() require('cmp').complete() end, "Trigger completion", mode = "i" },
+    ["<C-O><Tab>"] = { function() require("cmp").complete() end, "Trigger completion", mode = "i" },
 
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
@@ -42,7 +41,8 @@ which_key.register({
         ["g<C-k>"] = { ":topleft Gdiffsplit<CR>", "diff (split up)" },
         ["g<C-l>"] = { ":belowright Gvdiffsplit<CR>", "diff (split right)" },
 
-        l = { "<cmd>Lazy<CR>", "LazyVim" },
+        ll = { ":Lazy<CR>", "LazyVim" },
+        le = { ":LazyExtras<CR>", "LazyExtras" },
 
         m = { "<cmd>Mason<CR>", "Mason" },
 
@@ -62,4 +62,19 @@ which_key.register({
         ["<C-k>"] = { ":topleft split<CR>", "Split up" },
         ["<C-l>"] = { ":belowright vsplit<CR>", "Split right" },
     },
-})
+}
+
+return {
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        config = function()
+            local which_key = require("which-key")
+            which_key.setup({
+                plugins = { spelling = true },
+                key_labels = { ["<leader>"] = "SPC" },
+            })
+            which_key.register(which_key_mappings)
+        end,
+    },
+}
