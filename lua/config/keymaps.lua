@@ -14,13 +14,14 @@ which_key.register({
         X = { ":bdelete!<CR>", "Force close" },
 
         f = { name = "+find" },
-        fb = { lazyvim_util.telescope("buffers"), "Buffers" },
         fc = { lazyvim_util.telescope.config_files(), "Config" },
         fd = { lazyvim_util.telescope("git_status"), "Diffs" },
         ff = { lazyvim_util.telescope("files"), "Files" },
         fF = { lazyvim_util.telescope("find_files"), "All Files" },
         fr = { lazyvim_util.telescope("lsp_references"), "References" },
-        ft = { "<cmd>Neotree toggle<cr>", "Neotree" },
+        ft = { ":Neotree toggle<CR>", "Neotree" },
+        fg = { ":Neotree git_status toggle<CR>", "Neotree" },
+        fb = { ":Neotree buffers toggle<CR>", "Neotree" },
         ["f/"] = { lazyvim_util.telescope("live_grep"), "Grep" },
         ["f:"] = { lazyvim_util.telescope("command_history"), "Command History" },
 
