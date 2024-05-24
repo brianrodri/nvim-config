@@ -23,27 +23,8 @@ require("lazy").setup({
             opts = { defaults = { keymaps = false } },
         },
 
-        -- Nice, but far too unstable.
-        { "folke/noice.nvim", enabled = false },
-        { "stevearc/dressing.nvim", enabled = false },
-
-        -- Keeps crashing when I switch tmux windows.
-        { "folke/persistence.nvim", enabled = false },
-
-        -- I don't want a dashboard.
-        { "nvimdev/dashboard-nvim", enabled = false },
-
         -- Animated indentation guides. Neat but way too slow.
         { "echasnovski/mini.indentscope", enabled = false },
-
-        -- I don't need to navigate TODOs.
-        { "folke/todo-comments.nvim", enabled = false },
-
-        -- Adds virtual text to search matches. Too noisy, not a fan.
-        { "folke/flash.nvim", enabled = false },
-
-        -- I prefer nvim-tree, it lets me do more.
-        { "nvim-neo-tree/neo-tree.nvim", enabled = false },
 
         -- Bugs out often and stays persistent at top of screen.
         { "nvim-treesitter/nvim-treesitter-context", enabled = false},
@@ -76,9 +57,6 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim",
             keys = false,
         },
-
-        { "folke/noice.nvim", enabled = false },
-        { "rcarriga/nvim-notify", enabled = false },
 
         -- My stuff needs to be imported last.
         { import = "plugins" },

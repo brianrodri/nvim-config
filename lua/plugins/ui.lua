@@ -17,26 +17,11 @@ return {
             vim.g.gruvbox_material_ui_contrast = "high"
         end,
     },
+
     { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox-material" } },
 
-    {
-        -- Cool file explorer
-        "nvim-tree/nvim-tree.lua",
-        init = function()
-            -- Disable built-in netrw file explorer.
-            vim.g.loaded_netrw = 1
-            vim.g.loaded_netrwPlugin = 1
-        end,
-        config = function()
-            require("nvim-tree").setup({
-                renderer = { group_empty = true },
-                view = { adaptive_size = true },
-            })
-        end,
-    },
-
     -- Sleek statusline replacement
-    { "nvim-lualine/lualine.nvim", opts = { colorscheme = "gruvbox-material" }, event = "VeryLazy" },
+    { "nvim-lualine/lualine.nvim", opts = { colorscheme = "gruvbox-material" } },
 
     {
         -- Pretty quickfix replacement.

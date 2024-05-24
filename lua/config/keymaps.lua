@@ -18,7 +18,7 @@ which_key.register({
         ff = { lazyvim_util.telescope("files"), "Files" },
         fF = { lazyvim_util.telescope("find_files"), "All Files" },
         fr = { lazyvim_util.telescope("lsp_references"), "References" },
-        ft = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
+        ft = { "<cmd>Neotree toggle<cr>", "Neotree" },
         ["f/"] = { lazyvim_util.telescope("live_grep"), "Grep" },
         ["f:"] = { lazyvim_util.telescope("command_history"), "Command History" },
 
