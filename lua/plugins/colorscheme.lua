@@ -6,9 +6,7 @@ return {
         config = function()
             vim.o.background = "dark"
             vim.o.termguicolors = true
-            vim.g.everforest_background = "hard"
             vim.g.everforest_better_performance = 1
-            vim.g.everforest_dim_inactive_windows = true
             vim.cmd.colorscheme("everforest")
             vim.api.nvim_set_hl(0, "MiniStarterHeader", { fg = "#7fab5e" })
             vim.api.nvim_set_hl(0, "MiniStarterSection", { link = "Comment" })
