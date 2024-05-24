@@ -63,14 +63,18 @@ return {
             mapping = {
                 ["<CR>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        cmp.confirm({ select = true })
+                        if luasnip.expand_or_locally_jumpable() then
+                            luasnip.expand_or_jump()
+                        else
+                            cmp.confirm({ select = true })
+                        end
                     else
                         fallback()
                     end
                 end),
                 ["<Tab>"] = cmp.mapping(function(fallback)
-                    if luasnip.expand_or_locally_jumpable() then
-                        luasnip.expand_or_jump()
+                    if luasnip.jumpable() then
+                        luasnip.jump()
                     elseif cmp.visible() then
                         cmp.select_next_item()
                     else
