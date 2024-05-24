@@ -3,6 +3,7 @@ local lazyvim_util = require("lazyvim.util")
 local lazyvim_util_extras = require("lazyvim.util.extras")
 local mini_starter = require("mini.starter")
 local persistence = require("persistence")
+local telescope = require("telescope")
 
 local function centering_text(opts)
     local header = vim.split(opts.header or "", "\n")
@@ -67,14 +68,13 @@ return {
             }):join("\n"),
             -- stylua: ignore
             items = {
-                { name = "f Find files",      action = lazyvim_util.telescope.telescope("find_files"), section = "" },
-                { name = "r Recent files",    action = lazyvim_util.telescope.telescope("oldfiles"),   section = "" },
-                { name = "c Config",          action = lazyvim_util.telescope.config_files(),          section = "" },
-                { name = "l Lazyvim",         action = lazy.show,                                      section = "" },
-                { name = "e Lazyvim Extras",  action = lazyvim_util_extras.show,                       section = "" },
-                { name = "g Lazygit",         action = lazyvim_util.lazygit.open,                      section = "" },
-                { name = "s Session restore", action = persistence.load,                               section = "" },
-                { name = "q Quit",            action = vim.cmd.quitall,                                section = "" },
+                { name = "f 󰱼 Search files", action = lazyvim_util.telescope.telescope("files", {}),    section = "" },
+                { name = "r 󱋡 Recent files", action = lazyvim_util.telescope.telescope("oldfiles", {}), section = "" },
+                { name = "p  Projects",     action = telescope.extensions.projects.projects,           section = "" },
+                { name = "c  Config",       action = lazyvim_util.telescope.config_files(),            section = "" },
+                { name = "l 󰒲 Lazyvim",      action = lazy.show,                                        section = "" },
+                { name = "g 󰊢 Lazygit",      action = lazyvim_util.lazygit.open,                        section = "" },
+                { name = "q 󰩈 Quit",         action = vim.cmd.quitall,                                  section = "" },
             },
         },
         config = function(_, opts)
