@@ -12,7 +12,6 @@ which_key.register({
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
 
-        g = { name = "+git" },
         gb = { ":GBrowse<CR>", "browse" },
         gc = { ":Git commit<CR>", "commit" },
         ge = { ":Gread<CR>", "checkout --" },
