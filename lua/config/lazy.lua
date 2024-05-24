@@ -1,13 +1,17 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
--- bootstrap lazy.nvim
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+--- bootstrap lazy.nvim
+local lazy_install_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazy_install_path) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazy_install_path,
+    })
 end
-
----@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.opt.runtimepath:prepend(vim.env.LAZY or lazy_install_path)
+--- end
 
 local local_plugins_exist, _ = pcall(require, "local.plugins")
 
