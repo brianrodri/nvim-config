@@ -45,6 +45,9 @@ require("lazy").setup({
         -- I prefer nvim-tree, it lets me do more.
         { "nvim-neo-tree/neo-tree.nvim", enabled = false },
 
+        -- Bugs out often and stays persistent at top of screen.
+        { "nvim-treesitter/nvim-treesitter-context", enabled = false},
+
         {
             -- This is nice, but my muscle-memory is bound to tpope/vim-surround. This mimics it.
             "echasnovski/mini.surround",

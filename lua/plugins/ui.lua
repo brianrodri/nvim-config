@@ -27,7 +27,12 @@ return {
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1
         end,
-        config = function() require("nvim-tree").setup({ renderer = { group_empty = true } }) end,
+        config = function()
+            require("nvim-tree").setup({
+                renderer = { group_empty = true },
+                view = { adaptive_size = true },
+            })
+        end,
     },
 
     -- Sleek statusline replacement
