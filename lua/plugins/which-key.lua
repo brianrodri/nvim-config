@@ -44,8 +44,6 @@ local which_key_mappings = {
         ll = { ":Lazy<CR>", "LazyVim" },
         le = { ":LazyExtras<CR>", "LazyExtras" },
 
-        m = { "<cmd>Mason<CR>", "Mason" },
-
         t = { name = "+test" },
         ["tt"] = { function() require("neotest").run.run() end, "Run Nearest" },
         ["tT"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, "Run File" },
