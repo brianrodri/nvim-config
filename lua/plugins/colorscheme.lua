@@ -11,9 +11,4 @@ return {
     },
 
     { "nvim-lualine/lualine.nvim", opts = { theme = "everforest" } },
-
-    {
-        "akinsho/bufferline.nvim",
-        config = function() require("bufferline").setup() end,
-    },
 }
