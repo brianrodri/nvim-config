@@ -23,7 +23,7 @@ require("lazy").setup({
             opts = { defaults = { keymaps = false } },
         },
 
-        -- Animated indentation guides. Neat but way too slow.
+        -- Animated indentation guides, but I prefer instant feedback over animations.
         { "echasnovski/mini.indentscope", enabled = false },
 
         -- Bugs out often and stays persistent at top of screen.

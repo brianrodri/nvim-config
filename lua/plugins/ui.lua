@@ -18,6 +18,8 @@ return {
         end,
     },
 
+    { "edgynvim/edgy.nvim", opts = { animate = { enabled = false } } },
+
     { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox-material" } },
 
     -- Sleek statusline replacement
