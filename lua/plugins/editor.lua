@@ -1,5 +1,4 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 
 return {
     -- Lets "." repeat more kinds of things.
@@ -63,28 +62,20 @@ return {
             mapping = {
                 ["<CR>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        if luasnip.expand_or_locally_jumpable() then
-                            luasnip.expand_or_jump()
-                        else
-                            cmp.confirm({ select = true })
-                        end
+                        cmp.confirm({ select = true })
                     else
                         fallback()
                     end
                 end),
                 ["<Tab>"] = cmp.mapping(function(fallback)
-                    if luasnip.jumpable() then
-                        luasnip.jump()
-                    elseif cmp.visible() then
+                    if cmp.visible() then
                         cmp.select_next_item()
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if luasnip.jumpable(-1) then
-                        luasnip.jump(-1)
-                    elseif cmp.visible() then
+                    if cmp.visible() then
                         cmp.select_prev_item()
                     else
                         fallback()
