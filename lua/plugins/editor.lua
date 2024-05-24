@@ -15,18 +15,6 @@ return {
                 debounce = 500,
             },
         },
-        dependencies = {
-            "davidsierradz/cmp-conventionalcommits",
-            ft = { "gitcommit" },
-            config = function()
-                require("cmp").setup.buffer({
-                    sources = require("cmp").config.sources(
-                        { { name = "conventionalcommits" } },
-                        { { name = "buffer" } }
-                    ),
-                })
-            end,
-        },
     },
     -- Pretty quickfix replacement.
     { "folke/trouble.nvim", opts = { use_diagnostic_signs = true } },
