@@ -60,13 +60,24 @@ return {
         "hrsh7th/nvim-cmp",
         opts = {
             mapping = {
-                ["<CR>"] = cmp.mapping(function(fallback)
+                ["<CR>"] = cmp.mapping({
+                    i = function(fallback)
+                        if cmp.visible() and cmp.get_active_entry() then
+                            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                        else
+                            fallback()
+                        end
+                    end,
+                    s = cmp.mapping.confirm({ select = true }),
+                    c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+                }),
+                ["<C-c>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        cmp.confirm({ select = true })
+                        cmp.close()
                     else
                         fallback()
                     end
-                end),
+                end, { "i", "s" }),
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
