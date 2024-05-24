@@ -1,7 +1,4 @@
 return {
-    -- Convenient back/forth mappings.
-    "tpope/vim-unimpaired",
-
     -- Lets "." repeat more kinds of things.
     "tpope/vim-repeat",
 
