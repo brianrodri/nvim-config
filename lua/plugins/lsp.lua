@@ -1,4 +1,4 @@
-local work_jdtls_exists, _ = pcall(require, "work.jdtls")
+local local_jdtls_exists, _ = pcall(require, "local.jdtls")
 
 return {
     {
@@ -23,6 +23,5 @@ return {
             })
         end,
     },
-
-    work_jdtls_exists and { import = "work.jdtls" } or nil,
+    local_jdtls_exists and { import = "local.jdtls" } or nil,
 }
