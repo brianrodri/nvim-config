@@ -119,4 +119,22 @@ return {
             search_method = "cover_or_next",
         },
     },
+
+    {
+        "echasnovski/mini.move",
+        opts = {
+            mappings = {
+                -- Visual mode
+                left = "",
+                down = "]e",
+                up = "[e",
+                right = "",
+                -- Normal mode
+                line_left = "",
+                line_down = "]e",
+                line_up = "[e",
+                line_right = "",
+            },
+        },
+    },
 }
