@@ -1,43 +1,53 @@
+local dap = require("dap")
+local dap_ui_widgets = require("dap.ui.widgets")
+local dapui = require("dapui")
+
 return {
     {
         "mfussenegger/nvim-dap",
         keys = {
+            { "<leader>d", name = "+debug" },
+
+            { "<leader>d<CR>", dap.continue, desc = "Continue" },
+            { "<leader>ds", dap.pause, desc = "Pause" },
+            { "<leader>dx", dap.terminate, desc = "Terminate" },
+
             -- Motion-based intuition for navigating through stack traces:
             -- | h | left  | Run Last  | move back to the previous stacktrace
             -- | j | down  | Step Into | move down the current stack trace
             -- | k | up    | Step Out  | move up the current stack trace
             -- | l | right | Step Over | move on to the next stack trace
-            { "<leader>bh", function() require("dap").run_last() end, desc = "Run Last" },
-            { "<leader>bj", function() require("dap").step_into() end, desc = "Step Into" },
-            { "<leader>bk", function() require("dap").step_out() end, desc = "Step Out" },
-            { "<leader>bl", function() require("dap").step_over() end, desc = "Step Over" },
+            { "<leader>dh", dap.run_last, desc = "Step Back" },
+            { "<leader>dj", dap.step_into, desc = "Step Into" },
+            { "<leader>dk", dap.step_out, desc = "Step Out" },
+            { "<leader>dl", dap.step_over, desc = "Step Over" },
 
-            { "<leader>bb", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+            { "<leader>dg", dap.run_to_cursor, desc = "Run to cursor" },
+            { "<leader>dG", dap.goto_, desc = "Go to Line (without executing it)" },
+
+            { "<leader>db", dap.toggle_breakpoint, desc = "Toggle Breakpoint" },
             {
-                "<leader>bB",
-                function() require("dap").set_breakpoint(vim.fn.input("condition: ")) end,
+                "<leader>dB",
+                function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
                 desc = "Breakpoint Condition",
             },
 
-            { "<leader>bc", function() require("dap").run_to_cursor() end, desc = "Run to cursor" },
+            { "<leader>dd", dap.run_last, desc = "Re-run session" },
 
-            { "<leader>bK", function() require("dap.ui.widgets").hover() end, desc = "Widget for cursor" },
-            { "<leader>bG", function() require("dap").goto_() end, desc = "Go to Line (without executing it)" },
+            { "<leader>dr", dap.repl.toggle, desc = "Toggle REPL" },
+            { "<leader>dD", dap.session, desc = "Session" },
 
-            { "<leader>bn", function() require("dap").continue() end, desc = "Continue" },
-            { "<leader>bs", function() require("dap").pause() end, desc = "Pause" },
-            { "<leader>bx", function() require("dap").terminate() end, desc = "Terminate" },
-
-            { "<leader>br", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-            { "<leader>bD", function() require("dap").session() end, desc = "Session" },
+            { "<leader>dw", dap_ui_widgets.hover, desc = "Widgets" },
         },
     },
 
     {
         "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap" },
+        dependencies = { "nvim-neotest/nvim-nio" },
+        config = function(_, opts) dapui.setup(opts) end,
         keys = {
-            { "<leader>bu", function() require("dapui").toggle({}) end, desc = "DAP UI" },
+            { "<leader>de", dapui.eval, desc = "Eval", mode = { "n", "v" } },
+            { "<leader>du", dapui.toggle, desc = "Dap UI" },
         },
     },
 }
