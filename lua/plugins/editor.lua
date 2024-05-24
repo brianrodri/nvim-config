@@ -14,6 +14,9 @@ return {
         dependencies = { "tpope/vim-rhubarb" },
     },
 
+    -- Might try again if I can come up with an intuitive binding.
+    { "folke/flash.nvim", enabled = false },
+
     {
         "hrsh7th/nvim-cmp",
         opts = {
