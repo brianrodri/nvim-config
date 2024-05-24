@@ -8,6 +8,13 @@ return {
     -- Frees me from having to set up per-language indentation settings (just use whatever's already there)
     "tpope/vim-sleuth",
 
+    -- Look up nerd font symbols from within neovim.
+    {
+        "2kabhishek/nerdy.nvim",
+        dependencies = { "stevearc/dressing.nvim", "nvim-telescope/telescope.nvim" },
+        config = function() require("telescope").load_extension("nerdy") end,
+    },
+
     -- Beautiful quicklist replacement
     {
         "folke/trouble.nvim",
