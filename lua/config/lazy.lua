@@ -17,14 +17,7 @@ local local_plugins_exist, _ = pcall(require, "local.plugins")
 
 require("lazy").setup({
     spec = {
-        {
-            "LazyVim/LazyVim",
-            import = "lazyvim.plugins",
-            opts = {
-                -- I'd rather add them incrementally.
-                defaults = { keymaps = false },
-            },
-        },
+        { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { defaults = { keymaps = false } } },
         { import = "plugins" },
         local_plugins_exist and { import = "local.plugins" } or nil,
     },
