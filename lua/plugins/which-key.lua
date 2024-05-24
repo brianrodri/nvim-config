@@ -5,8 +5,6 @@ local lazyvim_util = require("lazyvim.util")
 local which_key_mappings = {
     ZA = { ":qa!<CR>", "Force quit" },
 
-    ["<C-O><Tab>"] = { function() require("cmp").complete() end, "Trigger completion", mode = "i" },
-
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
         w = { ":w!<CR>", "Force write" },

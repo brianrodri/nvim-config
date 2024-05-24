@@ -11,8 +11,8 @@ return {
     {
         "hrsh7th/nvim-cmp",
         opts = {
-            completion = {
-                autocomplete = false,
+            performance = {
+                debounce = 500,
             },
         },
         dependencies = {
