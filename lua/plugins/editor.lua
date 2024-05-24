@@ -28,6 +28,8 @@ return {
             end,
         },
     },
+    -- Pretty quickfix replacement.
+    { "folke/trouble.nvim", opts = { use_diagnostic_signs = true } },
 
     {
         -- Code coverage signs

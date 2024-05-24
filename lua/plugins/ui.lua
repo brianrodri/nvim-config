@@ -10,10 +10,4 @@ return {
 
     -- Default telescope bindings are nice, but they're taking too many bindings. I'll set 'em myself.
     { "nvim-telescope/telescope.nvim", keys = false },
-
-    {
-        -- Pretty quickfix replacement.
-        "folke/trouble.nvim",
-        opts = { use_diagnostic_signs = true },
-    },
 }
