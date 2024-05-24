@@ -27,6 +27,9 @@ which_key.register({
 
         Gb = { ":GBrowse<CR>", "git browse", mode = { "n", "v" } },
 
+        Gl = { ":Git pull<CR>", "git pull" },
+        Gp = { ":Git push<CR>", "git push" },
+
         Ge = { ":Gread<CR>", "git checkout --", mode = { "n", "v" } },
         Gw = { ":Gwrite<CR>", "git add", mode = { "n", "v" } },
         Gc = { ":Git commit<CR>", "git commit" },
