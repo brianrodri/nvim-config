@@ -19,15 +19,12 @@ return {
     -- Pretty quickfix replacement.
     { "folke/trouble.nvim", opts = { use_diagnostic_signs = true } },
 
+    -- Code coverage signs
     {
-        -- Code coverage signs
         "andythigpen/nvim-coverage",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function() require("coverage").setup() end,
     },
-
-    -- https://www.lazyvim.org/configuration/recipes#supertab
-    { "L3MON4D3/LuaSnip", keys = function() return {} end },
 
     {
         "hrsh7th/nvim-cmp",
