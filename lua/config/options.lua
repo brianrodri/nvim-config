@@ -7,3 +7,5 @@ vim.opt.mouse = "a"
 vim.opt.relativenumber = true
 
 vim.opt.signcolumn = "yes"
+
+vim.g.autoformat = false
