@@ -33,7 +33,7 @@ which_key.register({
         Ge = { ":Gread<CR>", "git checkout --", mode = { "n", "v" } },
         Gw = { ":Gwrite<CR>", "git add", mode = { "n", "v" } },
         Gc = { ":Git commit<CR>", "git commit" },
-        Gr = { ":GRename ", "git mv" },
+        Gr = { ":GRename ", "git mv (filename only)" },
         ["G<C-r>"] = { ":GMove ", "git mv" },
 
         ["G?"] = { ":Git blame<CR>", "git blame", mode = { "n", "v" } },
