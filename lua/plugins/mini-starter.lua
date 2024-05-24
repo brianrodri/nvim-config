@@ -78,6 +78,11 @@ return {
             },
         },
         config = function(_, opts)
+            vim.api.nvim_set_hl(0, "MiniStarterHeader", { link = "Green" })
+            vim.api.nvim_set_hl(0, "MiniStarterSection", { link = "Comment" })
+            vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { link = "Green" })
+            vim.api.nvim_set_hl(0, "MiniStarterFooter", { link = "Comment" })
+
             mini_starter.setup(centering_text(opts))
 
             -- Close LazyVim if it's open at startup
