@@ -1,9 +1,0 @@
-{
-  "workspace.library": [
-    "~/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/stable",
-    "/usr/local/Cellar/neovim/0.9.2/share/nvim/runtime/lua",
-    "~/Repositories/nvim-config/lua",
-    "${3rd}/luv/library"
-  ]
-}
-
