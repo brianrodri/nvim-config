@@ -6,47 +6,51 @@ local which_key = require("which-key")
 which_key.register({
     ZA = { ":qa!<CR>", "Force quit" },
 
-    ["]b"] = { "<cmd>bnext<CR>", "Next buffer" },
-    ["[b"] = { "<cmd>bprevious<CR>", "Previous buffer" },
-
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
+        w = { ":w!<CR>", "Force write" },
+        X = { ":bdelete!<CR>", "Force close" },
 
-        gb = { ":GBrowse<CR>", "browse" },
-        gc = { ":Git commit<CR>", "commit" },
+        f = { name = "+find" },
+        fb = { lazyvim_util.telescope("buffers"), "Buffers" },
+        fc = { lazyvim_util.telescope.config_files(), "Config" },
+        fd = { lazyvim_util.telescope("git_status"), "Diffs" },
+        ff = { lazyvim_util.telescope("files"), "Files" },
+        fF = { lazyvim_util.telescope("find_files"), "All Files" },
+        fr = { lazyvim_util.telescope("oldfiles"), "Recent Files" },
+        ft = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
+        ["f/"] = { lazyvim_util.telescope("live_grep"), "Grep" },
+        ["f:"] = { lazyvim_util.telescope("command_history"), "Command History" },
+
+        g = { name = "+git" },
+        gb = { ":Git blame<CR>", "blame" },
         ge = { ":Gread<CR>", "checkout --" },
-        gg = {
-            function() lazy_util.float_term({ "lazygit" }, { cwd = lazyvim_util.root.get() }) end,
-            "lazygit",
-        },
+        gg = { function() lazy_util.float_term({ "lazygit" }, { border = "solid" }) end, "lazygit" },
         gl = { ":Git pull<CR>", "pull" },
         gp = { ":Git push<CR>", "push" },
         gr = { ":GRename ", "mv (filename only)" },
+        gR = { ":GMove ", "mv" },
+        gs = { ":Git<CR>", "status" },
         gw = { ":Gwrite<CR>", "add" },
-        ["g?"] = { ":Git blame<CR>", "blame" },
+        gx = { ":GBrowse<CR>", "browse" },
+        gz = { ":Git commit<CR>", "commit" },
         ["g<C-h>"] = { ":topleft Gvdiffsplit<CR>", "diff (split left)" },
         ["g<C-j>"] = { ":belowright Gdiffsplit<CR>", "diff (split down)" },
         ["g<C-k>"] = { ":topleft Gdiffsplit<CR>", "diff (split up)" },
         ["g<C-l>"] = { ":belowright Gvdiffsplit<CR>", "diff (split right)" },
-        ["g<C-r>"] = { ":GMove ", "mv" },
 
         l = { "<cmd>Lazy<CR>", "LazyVim" },
 
-        T = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
-
-        w = { ":w!<CR>", "Force write" },
-
-        X = { ":bdelete!<CR>", "Delete buffer" },
+        m = { "<cmd>Mason<CR>", "Mason" },
 
         ["?"] = { name = "+coverage" },
-        ["?cn"] = { function() coverage.jump_next("covered") end, "Next covered" },
-        ["?cp"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
-        ["?pn"] = { function() coverage.jump_next("partial") end, "Next partially covered" },
-        ["?pp"] = { function() coverage.jump_prev("partial") end, "Previous partially covered" },
-        ["?un"] = { function() coverage.jump_next("uncovered") end, "Next uncovered" },
-        ["?up"] = { function() coverage.jump_prev("uncovered") end, "Previous uncovered" },
-
-        ["<C-f>"] = { ":LazyFormat<CR>", "LazyFormat" },
+        t = { name = "+test" },
+        ["t]c"] = { function() coverage.jump_next("covered") end, "Next covered" },
+        ["t[c"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
+        ["t]p"] = { function() coverage.jump_next("partial") end, "Next partially covered" },
+        ["t[p"] = { function() coverage.jump_prev("partial") end, "Previous partially covered" },
+        ["t]u"] = { function() coverage.jump_next("uncovered") end, "Next uncovered" },
+        ["t[u"] = { function() coverage.jump_prev("uncovered") end, "Previous uncovered" },
 
         ["<C-h>"] = { ":topleft vsplit<CR>", "Split left" },
         ["<C-j>"] = { ":belowright split<CR>", "Split down" },
