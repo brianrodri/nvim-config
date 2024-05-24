@@ -1,41 +1,50 @@
-local function keymap(mode, lhs, rhs, opts)
-    local keys = require("lazy.core.handler").handlers.keys
-    -- do not create the keymap if a lazy keys handler exists
-    if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-        opts = opts or {}
-        opts.silent = opts.silent ~= false
-        if opts.remap and not vim.g.vscode then
-            opts.remap = nil
-        end
-        vim.keymap.set(mode, lhs, rhs, opts)
+local function new_coverage_jumper(dir, type)
+    local jump = require("coverage").jump_next
+    if dir == "prev" then
+        jump = require("coverage").jump_prev
+    end
+    return function()
+        return jump(type)
     end
 end
 
--- Quick commands
-keymap("n", "<leader>w", ":w!<CR>")
-keymap("n", "<leader>e", ":e! %<CR>")
-keymap("n", "ZA", ":qa!<CR>")
+require("which-key").register({
+    ZA = { ":qa!<CR>", "Force quit" },
 
--- Window splitting
-keymap("n", "<leader><C-h>", ":topleft vsplit<CR>")
-keymap("n", "<leader><C-j>", ":belowright split<CR>")
-keymap("n", "<leader><C-k>", ":topleft split<CR>")
-keymap("n", "<leader><C-l>", ":belowright vsplit<CR>")
+    ["]b"] = { "<cmd>bnext<CR>", "Next buffer" },
+    ["[b"] = { "<cmd>bprevious<CR>", "Previous buffer" },
 
--- Buffer navigation
-keymap("n", "]b", "<cmd>bnext<cr>")
-keymap("n", "[b", "<cmd>bprevious<cr>")
+    ["<leader>"] = {
+        e = { ":e! %<CR>", "Force re-open" },
 
--- Open LazyVim
-keymap("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+        gg = {
+            function()
+                require("lazy.util").float_term({ "lazygit" }, {
+                    cwd = require("lazyvim.util").root.get(),
+                    esc_esc = false,
+                    ctrl_hjkl = false,
+                })
+            end,
+            "Lazygit",
+        },
 
--- Force format
-keymap({ "n", "v" }, "<leader><C-f>", function()
-    require("lazyvim.plugins.lsp.format").format({ force = true })
-end, { desc = "Format" })
+        l = { "<cmd>Lazy<CR>", "LazyVim" },
 
--- lazygit
-keymap("n", "<leader>gg", function()
-    local util = require("lazyvim.util")
-    util.float_term({ "lazygit" }, { cwd = util.get_root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit (root dir)" })
+        w = { ":w!<CR>", "Force write" },
+
+        ["?"] = { name = "+coverage" },
+        ["?cn"] = { new_coverage_jumper("next", "covered"), "Next covered" },
+        ["?cp"] = { new_coverage_jumper("prev", "covered"), "Previous covered" },
+        ["?un"] = { new_coverage_jumper("next", "uncovered"), "Next uncovered" },
+        ["?up"] = { new_coverage_jumper("prev", "uncovered"), "Previous uncovered" },
+        ["?pn"] = { new_coverage_jumper("next", "partial"), "Next partially covered" },
+        ["?pp"] = { new_coverage_jumper("prev", "partial"), "Previous partially covered" },
+
+        ["<C-f>"] = { ":LazyFormat<CR>", "LazyFormat" },
+
+        ["<C-h>"] = { ":topleft vsplit<CR>", "Split left" },
+        ["<C-j>"] = { ":belowright split<CR>", "Split down" },
+        ["<C-k>"] = { ":topleft split<CR>", "Split up" },
+        ["<C-l>"] = { ":belowright vsplit<CR>", "Split right" },
+    },
+})
