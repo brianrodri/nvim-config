@@ -1,6 +1,7 @@
 local coverage = require("coverage")
 local lazy_util = require("lazy.util")
 local lazyvim_util = require("lazyvim.util")
+local which_key = require("which-key")
 
 local which_key_mappings = {
     ZA = { ":qa!<CR>", "Force quit" },
@@ -70,11 +71,7 @@ return {
         "folke/which-key.nvim",
         event = "VeryLazy",
         config = function()
-            local which_key = require("which-key")
-            which_key.setup({
-                plugins = { spelling = true },
-                key_labels = { ["<leader>"] = "SPC" },
-            })
+            which_key.setup({ plugins = { spelling = true } })
             which_key.register(which_key_mappings)
         end,
     },
