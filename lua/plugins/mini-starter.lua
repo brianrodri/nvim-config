@@ -80,6 +80,9 @@ return {
         config = function(_, opts)
             mini_starter.setup(centering_text(opts))
 
+            -- Close LazyVim if it's open at startup
+            if vim.o.filetype == "lazy" then vim.cmd.close() end
+
             vim.api.nvim_create_autocmd("User", {
                 pattern = "LazyVimStarted",
                 callback = function()
