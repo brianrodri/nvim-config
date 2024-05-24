@@ -19,8 +19,15 @@ return {
     },
 
     { "edgynvim/edgy.nvim", opts = { animate = { enabled = false } } },
+    -- Animated indentation guides, but I prefer instant feedback over animations.
+    { "echasnovski/mini.indentscope", enabled = false },
 
     { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox-material" } },
+
+    -- Default telescope bindings are nice, but they're taking too many bindings. I'll set 'em myself.
+    { "nvim-telescope/telescope.nvim", keys = false },
+
+    { "folke/edgy.nvim", opts = { animate = { enabled = false } } },
 
     -- Sleek statusline replacement
     { "nvim-lualine/lualine.nvim", opts = { colorscheme = "gruvbox-material" } },
