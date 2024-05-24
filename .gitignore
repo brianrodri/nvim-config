@@ -1,5 +1,5 @@
 # This file depends on the user's system paths, so don't bother committing.
 .luarc.json
 
-# Ignore work-specific files
-lua/work
+# Ignore local config files
+lua/local
