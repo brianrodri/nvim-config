@@ -62,6 +62,12 @@ require("lazy").setup({
             },
         },
 
+        {
+            -- Default telescope bindings are nice, but they're taking too many bindings. I'll set 'em myself.
+            "nvim-telescope/telescope.nvim",
+            keys = nil,
+        },
+
         -- My stuff needs to be imported last.
         { import = "plugins" },
     },
