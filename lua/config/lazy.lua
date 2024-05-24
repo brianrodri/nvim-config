@@ -70,6 +70,9 @@ require("lazy").setup({
             keys = false,
         },
 
+        { "folke/noice.nvim", enabled = false },
+        { "rcarriga/nvim-notify", enabled = false },
+
         -- My stuff needs to be imported last.
         { import = "plugins" },
         work_plugins_exists and { import = "work.plugins" } or nil,
