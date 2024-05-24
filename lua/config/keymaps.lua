@@ -6,6 +6,8 @@ local which_key = require("which-key")
 which_key.register({
     ZA = { ":qa!<CR>", "Force quit" },
 
+    ["<C-space>"] = { function() require('cmp').complete() end, "Trigger completion", mode = "i" },
+
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
         w = { ":w!<CR>", "Force write" },

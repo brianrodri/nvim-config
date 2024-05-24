@@ -16,6 +16,11 @@ return {
 
     {
         "hrsh7th/nvim-cmp",
+        opts = {
+            completion = {
+                autocomplete = false
+            },
+        },
         dependencies = {
             "davidsierradz/cmp-conventionalcommits",
             ft = { "gitcommit" },
