@@ -44,6 +44,9 @@ which_key.register({
         m = { "<cmd>Mason<CR>", "Mason" },
 
         t = { name = "+test" },
+        ["tt"] = { function() require("neotest").run.run() end, "Run Nearest" },
+        ["tT"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, "Run File" },
+        ["tg"] = { function() require("neotest").run.run(vim.uv.cwd()) end, "Run All Test Files" },
         ["t]c"] = { function() coverage.jump_next("covered") end, "Next covered" },
         ["t[c"] = { function() coverage.jump_prev("covered") end, "Previous covered" },
         ["t]p"] = { function() coverage.jump_next("partial") end, "Next partially covered" },
