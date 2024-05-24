@@ -1,26 +1,19 @@
 return {
     {
-        "gbprod/nord.nvim",
-        lazy = false,
+        "sainnhe/everforest",
         priority = 1000,
+        lazy = false,
         config = function()
-            require("nord").setup({ diff = { mode = "fg" }, search = { theme = "vscode" } })
-            vim.cmd.colorscheme("nord")
+            vim.o.background = "dark"
+            vim.g.everforest_background = "hard"
+            vim.cmd.colorscheme("everforest")
         end,
-        install = {
-            colorscheme = { "nord" },
-        },
     },
 
-    { "nvim-lualine/lualine.nvim", opts = { theme = "nord" } },
+    { "nvim-lualine/lualine.nvim", opts = { theme = "everforest" } },
 
     {
         "akinsho/bufferline.nvim",
-        config = function()
-            require("bufferline").setup({
-                options = { separator_style = "thin" },
-                highlights = require("nord.plugins.bufferline").akinsho(),
-            })
-        end,
+        config = function() require("bufferline").setup() end,
     },
 }
