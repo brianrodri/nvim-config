@@ -18,7 +18,6 @@ return {
         end,
     },
 
-
     -- I prefer instant feedback over animations.
     { "folke/edgy.nvim", opts = { animate = { enabled = false } } },
     { "echasnovski/mini.indentscope", enabled = false },
