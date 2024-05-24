@@ -1,3 +1,2 @@
--- NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-require("my.remaps").setup_mapleader()
-require("my.plugins").bootstrap()
+-- bootstrap lazy.nvim, LazyVim and plugins
+require("my.config.lazy")

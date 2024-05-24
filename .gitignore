@@ -1,3 +1,6 @@
+# This file depends on the user's system paths, so don't bother committing.
+.luarc.json
+
 # This repo uses the xdg/ directory to isolate NeoVim development (see .envrc).
 xdg/*
 # Keep just one file, an empty ".gitkeep", so Git knows to clone the directory.
