@@ -28,12 +28,4 @@ require("lazy").setup({
         { import = "plugins" },
         local_plugins_exist and { import = "local.plugins" } or nil,
     },
-    checker = {
-        enabled = true,
-        concurrency = 1,
-    },
-    change_detection = {
-        enabled = true,
-        notify = true,
-    },
 })
