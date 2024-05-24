@@ -1,4 +1,12 @@
 return {
+    ---@begin Disabled keys
+
+    { "nvim-telescope/telescope.nvim", keys = false },
+
+    ---@end
+
+    ---@begin Disabled plugins
+
     -- Gotta think of an intuitive key binding for this, I don't like the default.
     { "folke/flash.nvim", enabled = false },
 
@@ -7,4 +15,6 @@ return {
 
     -- I prefer instant feedback over animations.
     { "echasnovski/mini.indentscope", enabled = false },
+
+    ---@end
 }
