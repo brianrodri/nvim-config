@@ -1,5 +1,9 @@
 # This file depends on the user's system paths, so don't bother committing.
 .luarc.json
 
+# This varies between machines because they use different local plugins.
+# I'd rather ignore lazy-lock.json than maintain conflicts between them forever.
+lazy-lock.json
+
 # Ignore local config files
 lua/local
