@@ -23,7 +23,7 @@ which_key.register({
         },
 
         G = { name = "+fugitive" },
-        GG = { ":Git<CR>", "git summary" },
+        Gs = { ":Git<CR>", "git summary" },
 
         Gb = { ":GBrowse<CR>", "git browse", mode = { "n", "v" } },
 
