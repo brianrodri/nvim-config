@@ -15,6 +15,9 @@ return {
         },
     },
 
+    -- I'd rather have the extra lines.
+    { "nvim-treesitter/nvim-treesitter-context", enabled = false },
+
     -- I prefer instant feedback over animations.
     { "echasnovski/mini.indentscope", enabled = false },
 
