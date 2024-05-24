@@ -1,11 +1,15 @@
 return {
     {
         -- Color scheme
-        "folke/tokyonight.nvim",
+        "sainnhe/gruvbox-material",
         lazy = false,
         priority = 1000,
-        opts = { style = "night" },
+        config = function()
+            vim.o.termguicolors = true
+            vim.g.gruvbox_material_background = "hard"
+        end,
     },
+    { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox-material" } },
 
     {
         -- Cool file explorer
@@ -19,7 +23,7 @@ return {
     },
 
     -- Sleek statusline replacement
-    { "nvim-lualine/lualine.nvim", opts = { colorscheme = "tokyonight" }, event = "VeryLazy" },
+    { "nvim-lualine/lualine.nvim", opts = { colorscheme = "gruvbox-material" }, event = "VeryLazy" },
 
     {
         -- Pretty quickfix replacement.
