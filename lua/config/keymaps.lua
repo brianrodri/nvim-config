@@ -1,11 +1,7 @@
 local function new_coverage_jumper(dir, type)
     local jump = require("coverage").jump_next
-    if dir == "prev" then
-        jump = require("coverage").jump_prev
-    end
-    return function()
-        return jump(type)
-    end
+    if dir == "prev" then jump = require("coverage").jump_prev end
+    return function() return jump(type) end
 end
 
 require("which-key").register({
