@@ -1,3 +1,6 @@
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+
 return {
     -- Lets "." repeat more kinds of things.
     "tpope/vim-repeat",
@@ -5,66 +8,82 @@ return {
     -- Frees me from having to set up per-language indentation settings (just use whatever's already there)
     "tpope/vim-sleuth",
 
-    -- Might try again if I can come up with an intuitive binding.
-    { "folke/flash.nvim", enabled = false },
+    -- Beautiful quicklist replacement
+    {
+        "folke/trouble.nvim",
+        keys = {
+            {
+                "<leader>xx",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)",
+            },
+            {
+                "<leader>xX",
+                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+                desc = "Buffer Diagnostics (Trouble)",
+            },
+            {
+                "<leader>cs",
+                "<cmd>Trouble symbols toggle focus=false<cr>",
+                desc = "Symbols (Trouble)",
+            },
+            {
+                "<leader>cl",
+                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+                desc = "LSP Definitions / references / ... (Trouble)",
+            },
+            {
+                "<leader>xl",
+                "<cmd>Trouble loclist toggle<cr>",
+                desc = "Location List (Trouble)",
+            },
+            {
+                "<leader>xq",
+                "<cmd>Trouble qflist toggle<cr>",
+                desc = "Quickfix List (Trouble)",
+            },
+        },
+        opts = {
+            auto_close = true,
+            auto_preview = false,
+            restore = false,
+        },
+    },
 
     {
         "hrsh7th/nvim-cmp",
         opts = {
-            performance = {
-                debounce = 500,
-            },
-        },
-    },
-    -- Pretty quickfix replacement.
-    { "folke/trouble.nvim", opts = { use_diagnostic_signs = true } },
-
-    -- Code coverage signs
-    {
-        "andythigpen/nvim-coverage",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function() require("coverage").setup({ auto_reload = true }) end,
-    },
-
-    {
-        "hrsh7th/nvim-cmp",
-        ---@param opts cmp.ConfigSchema
-        opts = function(_, opts)
-            local luasnip = require("luasnip")
-            local cmp = require("cmp")
-
-            opts.mapping = vim.tbl_extend("force", opts.mapping, {
+            mapping = {
                 ["<CR>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        if luasnip.expand_or_jumpable() then
-                            luasnip.expand_or_jump()
-                        else
-                            cmp.confirm({ select = true })
-                        end
+                        cmp.confirm({ select = true })
                     else
                         fallback()
                     end
                 end),
                 ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.expand_or_locally_jumpable() then
+                    if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
+                    elseif cmp.visible() then
+                        cmp.select_next_item()
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.jumpable(-1) then
+                    if luasnip.jumpable(-1) then
                         luasnip.jump(-1)
+                    elseif cmp.visible() then
+                        cmp.select_prev_item()
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
-            })
-        end,
+            },
+            performance = {
+                debounce = 500,
+            },
+        },
     },
 
     {
