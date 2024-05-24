@@ -28,8 +28,8 @@ return {
     -- Default telescope bindings are nice, but they're taking too many bindings. I'll set 'em myself.
     { "nvim-telescope/telescope.nvim", keys = false },
 
-    -- Sleek statusline replacement
-    { "nvim-lualine/lualine.nvim", opts = { colorscheme = "gruvbox-material" } },
+    -- Sleep statusline replacement
+    { "nvim-lualine/lualine.nvim", opts = { theme = "gruvbox-material" } },
 
     {
         -- Pretty quickfix replacement.
