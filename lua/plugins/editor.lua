@@ -9,7 +9,10 @@ return {
     "tpope/vim-sleuth",
 
     -- A Git wrapper so awesome, it should be illegal
-    "tpope/vim-fugitive",
+    {
+        "tpope/vim-fugitive",
+        dependencies = { "tpope/vim-rhubarb" },
+    },
 
     {
         "hrsh7th/nvim-cmp",
