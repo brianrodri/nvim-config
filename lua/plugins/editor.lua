@@ -139,4 +139,9 @@ return {
             },
         },
     },
+
+    {
+        "ahmedkhalf/project.nvim",
+        opts = { patterns = { ".git", ".obsidian", "Makefile", "package.json" } },
+    },
 }
