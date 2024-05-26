@@ -20,7 +20,7 @@
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.lazyrc",
+    "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.mini-starter",
@@ -31,6 +31,5 @@
   "news": {
     "NEWS.md": "4964"
   },
-  "version": 4
+  "version": 5
 }
-
