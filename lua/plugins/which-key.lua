@@ -5,8 +5,15 @@ local which_key = require("which-key")
 local which_key_mappings = {
     ZA = { ":qa!<CR>", "Force quit" },
 
+    ["[o"] = { name = "+Enable options" },
     ["[oh"] = { function() vim.o.hlsearch = true end, "Enable highlight search" },
+    ["[of"] = { function() vim.b.autoformat = true end, "Enable auto-format" },
+    ["[ot"] = { function() vim.lsp.inlay_hint.enable(true) end, "Enable inlay hints" },
+
+    ["]o"] = { name = "+Disable options" },
     ["]oh"] = { function() vim.o.hlsearch = false end, "Disable highlight search" },
+    ["]of"] = { function() vim.b.autoformat = false end, "Disable auto-format" },
+    ["]ot"] = { function() vim.lsp.inlay_hint.enable(false) end, "Disable inlay hints" },
 
     ["<leader>"] = {
         e = { ":e! %<CR>", "Force re-open" },
