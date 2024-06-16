@@ -21,16 +21,16 @@ local which_key_mappings = {
         X = { ":bdelete!<CR>", "Force close" },
 
         f = { name = "+find" },
-        fc = { lazyvim_util.telescope.config_files(), "Config" },
-        fd = { lazyvim_util.telescope("git_status"), "Diffs" },
-        ff = { lazyvim_util.telescope("files"), "Files" },
-        fF = { lazyvim_util.telescope("find_files"), "All Files" },
-        fr = { lazyvim_util.telescope("oldfiles"), "Recent files" },
+        fc = { lazyvim_util.pick.config_files(), "Config" },
+        fd = { lazyvim_util.pick("git_status"), "Diffs" },
+        ff = { lazyvim_util.pick("files"), "Files" },
+        fF = { lazyvim_util.pick("find_files"), "All Files" },
+        fr = { lazyvim_util.pick("oldfiles"), "Recent files" },
         ft = { ":Neotree toggle<CR>", "Neotree" },
         fg = { ":Neotree git_status toggle<CR>", "Neotree" },
         fb = { ":Neotree buffers toggle<CR>", "Neotree" },
-        ["f/"] = { lazyvim_util.telescope("live_grep"), "Grep" },
-        ["f:"] = { lazyvim_util.telescope("command_history"), "Command History" },
+        ["f/"] = { lazyvim_util.pick("live_grep"), "Grep" },
+        ["f:"] = { lazyvim_util.pick("command_history"), "Command History" },
 
         gg = { function() lazy_util.float_term("lazygit") end, "lazygit" },
 

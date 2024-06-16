@@ -1,8 +1,6 @@
 local lazy = require("lazy")
 local lazyvim_util = require("lazyvim.util")
-local lazyvim_util_extras = require("lazyvim.util.extras")
 local mini_starter = require("mini.starter")
-local persistence = require("persistence")
 local telescope = require("telescope")
 
 local function centering_text(opts)
@@ -68,13 +66,13 @@ return {
             }):join("\n"),
             -- stylua: ignore
             items = {
-                { name = "f 󰱼 Search files", action = lazyvim_util.telescope.telescope("files", {}),    section = "" },
-                { name = "r 󱋡 Recent files", action = lazyvim_util.telescope.telescope("oldfiles", {}), section = "" },
-                { name = "p  Projects",     action = telescope.extensions.projects.projects,           section = "" },
-                { name = "c  Config",       action = lazyvim_util.telescope.config_files(),            section = "" },
-                { name = "l 󰒲 Lazyvim",      action = lazy.show,                                        section = "" },
-                { name = "g 󰊢 Lazygit",      action = lazyvim_util.lazygit.open,                        section = "" },
-                { name = "q 󰩈 Quit",         action = vim.cmd.quitall,                                  section = "" },
+                { name = "f 󰱼 Search files", action = lazyvim_util.pick("files", {}),         section = "" },
+                { name = "r 󱋡 Recent files", action = lazyvim_util.pick("oldfiles", {}),      section = "" },
+                { name = "p  Projects",     action = telescope.extensions.projects.projects, section = "" },
+                { name = "c  Config",       action = lazyvim_util.pick.config_files(),       section = "" },
+                { name = "l 󰒲 Lazyvim",      action = lazy.show,                              section = "" },
+                { name = "g 󰊢 Lazygit",      action = lazyvim_util.lazygit.open,              section = "" },
+                { name = "q 󰩈 Quit",         action = vim.cmd.quitall,                        section = "" },
             },
         },
         config = function(_, opts)
