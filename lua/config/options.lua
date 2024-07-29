@@ -5,4 +5,3 @@ vim.opt.mouse = "a"
 vim.opt.signcolumn = "yes"
 
 vim.g.autoformat = true
-vim.lsp.inlay_hint.enable(false)

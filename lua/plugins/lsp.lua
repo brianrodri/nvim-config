@@ -4,8 +4,8 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = {
-            -- Useful for debugging formatter issues
-            format_notify = true,
+            -- Inlay hints take up too much real estate.
+            inlay_hints = { enabled = false },
             servers = {
                 bashls = {
                     filetypes = { "zsh" },
