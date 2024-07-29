@@ -4,4 +4,4 @@ vim.opt.relativenumber = false
 vim.opt.mouse = "a"
 vim.opt.signcolumn = "yes"
 
-vim.g.autoformat = true
+vim.g.autoformat = false
