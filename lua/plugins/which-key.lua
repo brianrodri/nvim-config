@@ -1,5 +1,6 @@
 local lazy_view = require("lazy.view")
 local lazyvim_util = require("lazyvim.util")
+local neotest = require("neotest")
 local which_key = require("which-key")
 
 local which_key_mappings = {
@@ -29,9 +30,9 @@ local which_key_mappings = {
     { "<leader>ll", lazy_view.show, desc = "lazyvim" },
 
     { "<leader>t", group = "test" },
-    { "<leader>tt", function() require("neotest").run.run() end, desc = "nearest" },
-    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "file" },
-    { "<leader>tT", function() require("neotest").run.run(vim.uv.cwd()) end, desc = "all" },
+    { "<leader>tt", function() neotest.run.run() end, desc = "nearest" },
+    { "<leader>tf", function() neotest.run.run(vim.fn.expand("%")) end, desc = "file" },
+    { "<leader>tT", function() neotest.run.run(vim.uv.cwd()) end, desc = "all" },
 
     { "co", group = "toggle" },
     { "cot", ":Neotree toggle filesystem<CR>", desc = "filesystem" },
