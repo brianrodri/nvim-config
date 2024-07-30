@@ -144,4 +144,11 @@ return {
         "ahmedkhalf/project.nvim",
         opts = { patterns = { ".git", ".obsidian", "Makefile", "package.json" } },
     },
+
+    {
+        "klen/nvim-config-local",
+        opts = {
+            lookup_parents = true,
+        }
+    }
 }
