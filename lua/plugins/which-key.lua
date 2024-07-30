@@ -4,15 +4,14 @@ local neotest = require("neotest")
 local which_key = require("which-key")
 
 local which_key_mappings = {
-    { "ZA", ":qa!<CR>", desc = "force quit" },
-
     { "<leader><C-h>", ":topleft vsplit<CR>", desc = "split left" },
     { "<leader><C-j>", ":belowright split<CR>", desc = "split down" },
     { "<leader><C-k>", ":topleft split<CR>", desc = "split up" },
     { "<leader><C-l>", ":belowright vsplit<CR>", desc = "split right" },
-    { "<leader>X", ":bdelete!<CR>", desc = "force close" },
+    { "<leader>x", ":bdelete!<CR>", desc = "force close" },
     { "<leader>e", ":e! %<CR>", desc = "force re-open" },
     { "<leader>w", ":w!<CR>", desc = "force write" },
+    { "<leader>q", ":qa!<CR>", desc = "force quit" },
 
     { "<leader>f", group = "find" },
     { "<leader>f/", lazyvim_util.pick("live_grep"), desc = "grep" },
