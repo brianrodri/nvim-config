@@ -1,4 +1,4 @@
-local lazy_util = require("lazy.util")
+local lazy_view = require("lazy.view")
 local lazyvim_util = require("lazyvim.util")
 local which_key = require("which-key")
 
@@ -22,11 +22,11 @@ local which_key_mappings = {
     { "<leader>fg", lazyvim_util.pick("git_status"), desc = "git-status files" },
 
     { "<leader>g", group = "git" },
-    { "<leader>gg", function() lazy_util.float_term("lazygit") end, desc = "lazygit" },
+    { "<leader>gg", lazyvim_util.lazygit.open, desc = "lazygit" },
 
     { "<leader>l", group = "lazyvim" },
-    { "<leader>le", ":LazyExtras<CR>", desc = "extras" },
-    { "<leader>ll", ":Lazy<CR>", desc = "lazyvim" },
+    { "<leader>le", lazyvim_util.extras.show, desc = "extras" },
+    { "<leader>ll", lazy_view.show, desc = "lazyvim" },
 
     { "<leader>t", group = "test" },
     { "<leader>tt", function() require("neotest").run.run() end, desc = "nearest" },
