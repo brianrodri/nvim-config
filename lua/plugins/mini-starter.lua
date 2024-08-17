@@ -36,45 +36,22 @@ end
 return {
     {
         "echasnovski/mini.starter",
-        opts = {
-            evaluate_single = true,
-            header = vim.iter({
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣾⣿⣿⣿⣿⣿⣶⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠉⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⠀⢀⣼⣿⣿⠟⠛⠁⠀⠐⠋⠁⢾⣿⣿⣿⡿⢿⣿⣿⣿⣿⣷⡀⠀⠀⠀",
-                "⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⣼⣿⣿⣿⣿⣏⠁⠀⠀⠀⠀⠀⠀⠀⠊⠉⠁⡀⠀⠀⠹⠿⣿⣿⣿⣿⡄⠀⠀",
-                "⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠈⣿⣿⣿⣿⡷⠖⠀⠀⠀⠀⠀⠀⢚⣷⣿⣿⡿⠀⠀⠀⠀⢈⣿⣿⣿⣿⡄⠀",
-                "⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡀⠀⠈⠛⠿⠿⠦⠄⠀⠀⠀⠀⠀⠚⠈⠉⠉⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣷⠀",
-                "⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣦⠄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠻⣶⣾⣿⣿⣿⣿⣿⣿⣿⡆",
-                "⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠛⠁⠀⠉⠻⣿⣿⠁⣼⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠀⠀⠀⢘⣿⣿⣿⣿⣿⣿⣿⣿⣧",
-                "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⣤⣼⣷⡆⠀⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
-                "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢀⣾⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⣿⡿⠿⠃⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
-                "⢿⣿⣿⣿⣿⣿⣿⠿⣿⣿⡟⠀⢸⣿⣿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
-                "⢸⣿⣿⣿⣿⣿⡁⠀⠈⠛⠇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⢠⠀⠀⠰⠖⠃⠀⣠⣤⣤⣀⣀⡈⠻⣿⣿⣿⣿⣿⣿⣿⡇",
-                "⠀⢿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⢸⡆⣀⣠⣤⠀⢾⠟⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⡿⠀",
-                "⠀⠘⣿⣿⣿⣿⣿⣿⣿⣆⢠⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⢻⣿⣿⠇⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀",
-                "⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⠀⠀⠀⠀⠚⠛⣡⣾⣿⣆⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀",
-                "⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⣀⣀⣠⣼⣿⣿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠻⠿⠿⣿⣿⣿⣿⣿⣿⠿⠿⠟⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-            }):join("\n"),
-            -- stylua: ignore
-            items = {
-                { name = "f 󰱼 Search files", action = lazyvim_util.pick("files", {}),         section = "" },
-                { name = "r 󱋡 Recent files", action = lazyvim_util.pick("oldfiles", {}),      section = "" },
-                { name = "p  Projects",     action = telescope.extensions.projects.projects, section = "" },
-                { name = "c  Config",       action = lazyvim_util.pick.config_files(),       section = "" },
-                { name = "l 󰒲 Lazyvim",      action = lazy.show,                              section = "" },
-                { name = "g 󰊢 Lazygit",      action = lazyvim_util.lazygit.open,              section = "" },
-                { name = "q 󰩈 Quit",         action = vim.cmd.quitall,                        section = "" },
-            },
-        },
+        opts = function()
+            local header = vim.iter(require("ascii").get_random("anime", "onepiece")):join("\n")
+            return {
+                evaluate_single = true,
+                header = header,
+                items = {
+                    { name = "f 󰱼 Search files", action = lazyvim_util.pick("files", {}), section = "" },
+                    { name = "r 󱋡 Recent files", action = lazyvim_util.pick("oldfiles", {}), section = "" },
+                    { name = "p  Projects", action = telescope.extensions.projects.projects, section = "" },
+                    { name = "c  Config", action = lazyvim_util.pick.config_files(), section = "" },
+                    { name = "l 󰒲 Lazyvim", action = lazy.show, section = "" },
+                    { name = "g 󰊢 Lazygit", action = lazyvim_util.lazygit.open, section = "" },
+                    { name = "q 󰩈 Quit", action = vim.cmd.quitall, section = "" },
+                },
+            }
+        end,
         config = function(_, opts)
             vim.api.nvim_set_hl(0, "MiniStarterHeader", { link = "Green" })
             vim.api.nvim_set_hl(0, "MiniStarterSection", { link = "Comment" })
@@ -96,5 +73,6 @@ return {
                 end,
             })
         end,
+        dependencies = { "MaximilianLloyd/ascii.nvim" },
     },
 }
