@@ -1,6 +1,7 @@
 local lazy_view = require("lazy.view")
 local lazyvim_util = require("lazyvim.util")
 local neotest = require("neotest")
+local tmux = require("tmux")
 local which_key = require("which-key")
 
 local which_key_mappings = {
@@ -56,6 +57,11 @@ local which_key_mappings = {
     { "]of", function() vim.b.autoformat = false end, desc = "auto-format" },
     { "]oh", function() vim.o.hlsearch = false end, desc = "highlight search" },
     { "]oy", function() vim.lsp.inlay_hint.enable(false) end, desc = "inlay hints" },
+
+    { "<M-h>", tmux.resize_left, desc = "resize left" },
+    { "<M-j>", tmux.resize_bottom, desc = "resize bottom" },
+    { "<M-k>", tmux.resize_top, desc = "resize top" },
+    { "<M-l>", tmux.resize_right, desc = "resize right" },
 }
 
 return {
