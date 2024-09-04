@@ -14,13 +14,11 @@ return {
             :map(function(path) return { "BufReadPre " .. path .. "/**.md", "BufNewFile " .. path .. "/**.md" } end)
             :flatten()
             :totable(),
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
+        dependencies = { "nvim-lua/plenary.nvim" },
         opts = {
             disable_frontmatter = true,
             workspaces = workspaces,
-            daily_notes = { folder = "Journal/Daily Logs" },
+            daily_notes = { folder = "01 - Fleeting/01 - Daily" },
         },
     },
 }
