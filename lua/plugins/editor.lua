@@ -96,6 +96,9 @@ return {
             performance = {
                 debounce = 500,
             },
+            completion = {
+                autocomplete = false,
+            },
         },
     },
 
@@ -149,6 +152,6 @@ return {
         "klen/nvim-config-local",
         opts = {
             lookup_parents = true,
-        }
-    }
+        },
+    },
 }

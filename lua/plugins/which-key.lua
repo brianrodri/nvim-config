@@ -1,10 +1,14 @@
+local cmp = require("cmp")
 local lazy_view = require("lazy.view")
 local lazyvim_util = require("lazyvim.util")
 local neotest = require("neotest")
 local tmux = require("tmux")
 local which_key = require("which-key")
 
+--- @type wk.Spec
 local which_key_mappings = {
+    { "<M-space>", cmp.complete, mode = "i" },
+
     { "<leader><C-h>", ":topleft vsplit<CR>", desc = "split left" },
     { "<leader><C-j>", ":belowright split<CR>", desc = "split down" },
     { "<leader><C-k>", ":topleft split<CR>", desc = "split up" },
