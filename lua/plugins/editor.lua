@@ -145,7 +145,7 @@ return {
 
     {
         "ahmedkhalf/project.nvim",
-        opts = { patterns = { ".git", ".obsidian", "Makefile", "package.json" } },
+        opts = { patterns = { ".git", ".obsidian", "Makefile", "package.json", "project.godot" } },
     },
 
     {
