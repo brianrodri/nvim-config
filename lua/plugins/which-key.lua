@@ -68,13 +68,14 @@ local which_key_mappings = {
     { "<M-l>", tmux.resize_right, desc = "resize right" },
 }
 
-return {
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        config = function()
-            which_key.setup({ plugins = { spelling = true } })
-            which_key.add(which_key_mappings)
-        end,
-    },
-}
+return vim.g.vscode and {}
+    or {
+        {
+            "folke/which-key.nvim",
+            event = "VeryLazy",
+            config = function()
+                which_key.setup({ plugins = { spelling = true } })
+                which_key.add(which_key_mappings)
+            end,
+        },
+    }
