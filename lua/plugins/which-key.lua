@@ -7,7 +7,7 @@ local which_key = require("which-key")
 
 --- @type wk.Spec
 local which_key_mappings = {
-    { "<M-space>", cmp.complete, mode = "i" },
+    { "<C-j>", cmp.complete, mode = "i" },
 
     { "<leader><C-h>", ":topleft vsplit<CR>", desc = "split left" },
     { "<leader><C-j>", ":belowright split<CR>", desc = "split down" },
