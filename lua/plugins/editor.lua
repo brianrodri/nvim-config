@@ -145,7 +145,10 @@ return {
 
     {
         "ahmedkhalf/project.nvim",
-        opts = { patterns = { ".git", ".obsidian", "Makefile", "package.json", "project.godot" } },
+        opts = {
+            manual_mode = false,
+            patterns = { ".git", ".obsidian", "package.json", "project.godot" },
+        },
     },
 
     {
