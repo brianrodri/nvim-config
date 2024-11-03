@@ -1,5 +1,3 @@
-local cmp = require("cmp")
-
 return {
     -- Lets "." repeat more kinds of things.
     "tpope/vim-repeat",
@@ -57,52 +55,6 @@ return {
     },
 
     {
-        "hrsh7th/nvim-cmp",
-        opts = {
-            mapping = {
-                ["<CR>"] = cmp.mapping({
-                    i = function(fallback)
-                        if cmp.visible() then
-                            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-                        else
-                            fallback()
-                        end
-                    end,
-                    s = cmp.mapping.confirm({ select = true }),
-                    c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-                }),
-                ["<C-c>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.close()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-            },
-            performance = {
-                debounce = 500,
-            },
-            completion = {
-                autocomplete = false,
-            },
-        },
-    },
-
-    {
         -- This is nice, but my muscle-memory is bound to tpope/vim-surround. This mimics it.
         "echasnovski/mini.surround",
         opts = {
@@ -155,14 +107,6 @@ return {
         "klen/nvim-config-local",
         opts = {
             lookup_parents = true,
-        },
-    },
-
-    {
-        "supermaven-inc/supermaven-nvim",
-        opts = {
-            disable_keymaps = true,
-            disable_inline_completion = true,
         },
     },
 }

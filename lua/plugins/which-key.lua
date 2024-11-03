@@ -1,4 +1,3 @@
-local cmp = require("cmp")
 local lazy_view = require("lazy.view")
 local lazyvim_util = require("lazyvim.util")
 local neotest = require("neotest")
@@ -7,16 +6,15 @@ local which_key = require("which-key")
 
 --- @type wk.Spec
 local which_key_mappings = {
-    { "<C-j>", cmp.complete, mode = "i" },
+    { "ZA", ":bdelete!<CR>", desc = "close buffer" },
 
-    { "<leader><C-h>", ":topleft vsplit<CR>", desc = "split left" },
-    { "<leader><C-j>", ":belowright split<CR>", desc = "split down" },
-    { "<leader><C-k>", ":topleft split<CR>", desc = "split up" },
-    { "<leader><C-l>", ":belowright vsplit<CR>", desc = "split right" },
-    { "<leader>x", ":bdelete!<CR>", desc = "force close" },
-    { "<leader>e", ":e! %<CR>", desc = "force re-open" },
-    { "<leader>w", ":w!<CR>", desc = "force write" },
-    { "<leader>q", ":qa!<CR>", desc = "force quit" },
+    { "<leader><C-H>", ":topleft vsplit<CR>", desc = "split left" },
+    { "<leader><C-J>", ":belowright split<CR>", desc = "split down" },
+    { "<leader><C-K>", ":topleft split<CR>", desc = "split up" },
+    { "<leader><C-L>", ":belowright vsplit<CR>", desc = "split right" },
+    { "<leader><C-E>", ":e! %<CR>", desc = "force re-open" },
+    { "<leader><C-S>", ":w!<CR>", desc = "force write" },
+    { "<leader><C-Q>", ":qa!<CR>", desc = "force quit" },
 
     { "<leader>f", group = "find" },
     { "<leader>f/", lazyvim_util.pick("live_grep"), desc = "grep" },
