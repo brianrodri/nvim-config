@@ -1,6 +1,7 @@
 local lazy_view = require("lazy.view")
 local lazyvim_util = require("lazyvim.util")
 local neotest = require("neotest")
+local snacks = require("snacks")
 local tmux = require("tmux")
 local which_key = require("which-key")
 
@@ -25,7 +26,7 @@ local which_key_mappings = {
     { "<leader>fg", lazyvim_util.pick("git_status"), desc = "git-status files" },
 
     { "<leader>g", group = "git" },
-    { "<leader>gg", lazyvim_util.lazygit.open, desc = "lazygit" },
+    { "<leader>gg", snacks.lazygit.open, desc = "lazygit" },
 
     { "<leader>l", group = "lazyvim" },
     { "<leader>le", lazyvim_util.extras.show, desc = "extras" },

@@ -1,6 +1,7 @@
 local lazy = require("lazy")
 local lazyvim_util = require("lazyvim.util")
 local mini_starter = require("mini.starter")
+local snacks = require("snacks")
 local telescope = require("telescope")
 
 local function centering_text(opts)
@@ -47,7 +48,7 @@ return {
                     { name = "p  Projects", action = telescope.extensions.projects.projects, section = "" },
                     { name = "c  Config", action = lazyvim_util.pick.config_files(), section = "" },
                     { name = "l 󰒲 Lazyvim", action = lazy.show, section = "" },
-                    { name = "g 󰊢 Lazygit", action = lazyvim_util.lazygit.open, section = "" },
+                    { name = "g 󰊢 Lazygit", action = snacks.lazygit.open, section = "" },
                     { name = "q 󰩈 Quit", action = vim.cmd.quitall, section = "" },
                 },
             }
