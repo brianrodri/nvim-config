@@ -21,4 +21,7 @@ require("lazy").setup({
         { import = "plugins" },
         local_plugins_exist and { import = "local.plugins" } or nil,
     },
+    rocks = {
+        enabled = false,
+    },
 })
