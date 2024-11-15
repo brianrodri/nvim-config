@@ -10,6 +10,10 @@ return {
         },
     },
     {
+        "nvim-treesitter/nvim-treesitter",
+        opts = { ensure_installed = { "gdscript" } },
+    },
+    {
         "mfussenegger/nvim-dap",
         opts = function()
             local dap = require("dap")
