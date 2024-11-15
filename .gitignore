@@ -7,3 +7,6 @@ lazy-lock.json
 
 # Ignore local config files
 lua/local
+
+# MacOS files
+.DS_Store
