@@ -4,7 +4,7 @@ vim.opt.relativenumber = false
 vim.opt.mouse = "a"
 vim.opt.signcolumn = "yes"
 
-vim.g.autoformat = false
+vim.g.autoformat = true
 
 -- Disable unused providers
 vim.g.loaded_perl_provider = 0
