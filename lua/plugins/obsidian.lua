@@ -6,6 +6,7 @@ local workspaces = {
             daily_notes = { folder = "1 - Journal/Daily" },
             notes_subdir = "2 - Fleeting Notes",
             attachments = { img_folder = "8 - Meta/Attachments" },
+            disable_frontmatter = true,
         },
     },
 }
@@ -13,18 +14,23 @@ local workspaces = {
 return {
     {
         "epwalsh/obsidian.nvim",
+        version = "*",
         lazy = true,
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            {
+                "nvim-treesitter/nvim-treesitter",
+                opts = { ensure_installed = { "latex" } },
+            },
+        },
         event = vim.iter(workspaces)
             :map(function(wksp) return vim.fn.expand(wksp.path) .. "/*.md" end)
             :map(function(path) return { "BufReadPre " .. path, "BufNewFile " .. path } end)
             :flatten()
             :totable(),
         opts = {
-            completion = { nvim_cmp = false },
-            disable_frontmatter = true,
+            completion = { nvim_cmp = true },
             new_notes_location = "notes_subdir",
-            picker = { name = "fzf-lua" },
             ui = { enable = false },
             use_advanced_uri = true,
             workspaces = workspaces,
